@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('CHAKRA_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.environ.get('DEBUG') == 'True')
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'https://team-chakra-thlta.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'team-chakra-thlta.herokuapp.com']
 
 
 # Application definition
