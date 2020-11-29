@@ -3,11 +3,6 @@ import spacy
 
 from .models import ClientText, Keyword
 
-def some(x):
-    for t in x:
-        obj = Keyword(text = t, word="a", entity_type="b")
-        obj.save()
-
 class ClientTextKeyWords(serializers.ModelSerializer):
     class Meta:
         model = Keyword
@@ -23,7 +18,7 @@ class ClientTextSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         client_text = ClientText.objects.create(**validated_data)
 
-        nlp = spacy.load("en_core_web_sm")
+        nlp = spacy.load("nl_core_news_sm")
 
         doc = nlp(client_text.text)
 
