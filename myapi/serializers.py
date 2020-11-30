@@ -19,6 +19,7 @@ class ClientTextSerializer(serializers.ModelSerializer):
         client_text = ClientText.objects.create(**validated_data)
 
         nlp = spacy.load("nl_core_news_sm")
+        # nlp = spacy.load("en_core_web_sm")
 
         doc = nlp(client_text.text)
 
